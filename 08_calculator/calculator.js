@@ -14,12 +14,9 @@ const subtract = function(...args) {
 const sum = function(array) {
   return (array.length === 0) ? [] : array.reduce((previous, current) => previous + current);
 }
-//to reduce it, an array must have an initial value
+//NB! to reduce it, an empty array must have an initial value
 
-
-const multiply = function(...args) {
- return args.reduce((previous, current) => previous * current);
-};
+const multiply = (array) => array.reduce((previous, current) => previous * current);
 
 const power = (...args) => args.reduce((current, present) => current ** present);
 
