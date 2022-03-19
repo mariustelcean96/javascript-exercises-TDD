@@ -1,5 +1,5 @@
-const add = function(...arguments) {
-	return arguments.reduce((previous, current) => {
+const add = function(...args) {
+	return args.reduce((previous, current) => {
     return previous + current;
   })
 };
@@ -8,15 +8,14 @@ const subtract = function(...args) {
 	return args.reduce((previous, current) =>
   previous - current);
 };
-//Is there any difference between
-//add and sum functions?
-const sum = function(...args) { 
-	let sum = 0;
-  for(let arg of args) {
-    sum += arg;
-  }
-  return sum;
-};
+//add function has numbers as input while sum receives
+//an array
+
+const sum = function(array) {
+  return (array.length === 0) ? [] : array.reduce((previous, current) => previous + current);
+}
+//to reduce it, an array must have an initial value
+
 
 const multiply = function(...args) {
  return args.reduce((previous, current) => previous * current);
