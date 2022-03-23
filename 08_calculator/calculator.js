@@ -8,19 +8,17 @@ const subtract = function(...args) {
 	return args.reduce((previous, current) =>
   previous - current);
 };
-//add function has numbers as input while sum receives
-//an array
+//add function receives numbers while sum receives an array
 
-const sum = function(array) {
-  return (array.length === 0) ? [] : array.reduce((previous, current) => previous + current);
-}
+const sum = (array) => array.length ? array.reduce((previous, current) => previous + current) : [];
+
 //NB! to reduce it, an empty array must have an initial value
 
-const multiply = (array) => array.reduce((previous, current) => previous * current);
+const multiply = (array) => array.length ? array.reduce((previous, current) => previous * current) : [];
 
-const power = (...args) => args.reduce((current, present) => current ** present);
+const power = (...args) => args.reduce((previous, current) => Math.pow(previous, current));
 
-const factorial = function(nr) {
+/*const factorial = function(nr) {
   if (nr === 0) return 1;
   else {
     let result = 1;
@@ -28,6 +26,13 @@ const factorial = function(nr) {
       result *= i;
     }
     return result;
+  }
+};*/
+
+const factorial = function(number) {
+  if (!number) return 1;
+  else {
+    return number * factorial (number - 1); // 'factorial' <-> n! = n * (n-1)!
   }
 };
 
