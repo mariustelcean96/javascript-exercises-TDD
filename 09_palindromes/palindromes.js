@@ -1,13 +1,13 @@
 const palindromes = function (string) {
     const stringSimplified = string.replace(/\W/g, '')
-                                        .toLowerCase();
+                                   .toLowerCase();
     let outputString = '';
     for (let i = stringSimplified.length - 1; i >= 0 ; i--) {
       outputString += stringSimplified[i];
     }
    return (stringSimplified === outputString) ? true : false;
 }
-/*
+/* From the TOP's solutions page
 const palindromes = function (string) {
   const processedString = string.toLowerCase().replace(/\W/g, '');
   return (processedString.split('')
