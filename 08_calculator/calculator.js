@@ -33,6 +33,7 @@ const factorial = function(number) {
   if (!number) return 1;
   else {
     return number * factorial (number - 1); // 'factorial' <-> n! = n * (n-1)!
+    //to write this I had to check the solutions on TOP page
   }
 };
 

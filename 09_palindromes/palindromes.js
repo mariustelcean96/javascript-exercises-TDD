@@ -1,10 +1,14 @@
 const palindromes = function (inputString) {
-let outputString = '';
-for (let i = inputString.length - 1; i >= 0 ; i--) {
-  outputString += inputString[i];
+    const inputStringReduced = inputString.replace(/\W/g, '')
+                                          .toLowerCase();
+    let outputString = '';
+    for (let i = inputStringReduced.length - 1; i >= 0 ; i--) {
+      outputString += inputStringReduced[i];
+    }
+    if (outputString === inputStringReduced) return true;
+    else {
+      return outputString;
+    }
 }
-if (outputString === inputString) return true;
-};
-
 // Do not edit below this line
 module.exports = palindromes;
