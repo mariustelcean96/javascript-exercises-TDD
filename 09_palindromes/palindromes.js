@@ -1,14 +1,21 @@
-const palindromes = function (inputString) {
-    const inputStringReduced = inputString.replace(/\W/g, '')
-                                          .toLowerCase();
+const palindromes = function (string) {
+    const stringSimplified = string.replace(/\W/g, '')
+                                        .toLowerCase();
     let outputString = '';
-    for (let i = inputStringReduced.length - 1; i >= 0 ; i--) {
-      outputString += inputStringReduced[i];
+    for (let i = stringSimplified.length - 1; i >= 0 ; i--) {
+      outputString += stringSimplified[i];
     }
-    if (outputString === inputStringReduced) return true;
-    else {
-      return outputString;
-    }
+   return (stringSimplified === outputString) ? true : false;
 }
+/*
+const palindromes = function (string) {
+  const processedString = string.toLowerCase().replace(/\W/g, '');
+  return (processedString.split('')
+                         .reverse()
+                         .join('') == processedString
+         );
+};
+*/
+
 // Do not edit below this line
 module.exports = palindromes;
